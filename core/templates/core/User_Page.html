@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Welcome | {% endblock %}
+
+{% block content %}
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-white">Мой личный кабинет</h1>
+
+    <h2 class="text-lg text-white">Добро пожаловать, {{ request.user.username }}!</h2>
+
+    <div class="mt-8">
+        <h2 class="text-xl text-white">Моя Аватарка</h2>
+        {% if request.user.profile.avatar %}
+            <img src="{{ request.user.profile.avatar.url }}" alt="Аватар" class="mt-4 rounded-full h-32 w-32 mx-auto">
+        {% else %}
+            <p class="text-white">Аватарки пока нет :(</p>
+        {% endif %}
+        <style>
+    .edit_avatar {
+        margin-top: 100px; /* Добавляет отступ сверху */
+    }
+    </style>
+    <div class = edit_avatar>
+        <a href="{% url 'avatar_edit' %}" class="px-5 py-3 rounded-xl text-white bg-teal-400 hover:bg-teal-700">Edit Avatar</a>
+        <a href="{% url 'username_edit' %}" class="px-5 py-3 rounded-xl text-white bg-teal-400 hover:bg-teal-700">Edit Username</a>
+
+    </div>
+
+    </div>
+</div>
+{% endblock %}

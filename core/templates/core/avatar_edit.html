@@ -1,0 +1,16 @@
+<!-- avatar_edit.html -->
+{% extends 'core/base.html' %}
+
+{% block title %}Edit Avatar | {% endblock %}
+
+{% block content %}
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-white">Edit Avatar</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Avatar</button>
+    </form>
+</div>
+{% endblock %}

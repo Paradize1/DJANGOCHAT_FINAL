@@ -1,0 +1,13 @@
+Проект мессенджера.
+Ипользовал django-channels, Redis 3.0.504, и Ajax.
+Клиентская часть с обновлением чата в реальном времени находится в room.html.
+
+Чо делаем:
+1) создаём виртуалку python -m venv venv
+2) запускаем venv/scripts/activate
+3) устанавливаем зависимости pip install -r requirements.txt
+4) Переходим в папку djangochat и запускаем
+python manage.py runserver
+
+
+Переписываемся :)

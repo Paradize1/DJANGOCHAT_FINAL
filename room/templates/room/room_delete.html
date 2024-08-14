@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %}Delete Room | {% endblock %}
+
+{% block content %}
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-white">Delete Room</h1>
+</div>
+
+<div class="lg:w-2/4 mx-4 lg:mx-auto p-4 bg-white rounded-xl">
+    <p>Are you sure you want to delete the room "{{ room.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="px-5 py-3 rounded-xl text-white bg-red-600 hover:bg-red-700">Delete</button>
+        <a href="{% url 'rooms' %}" class="px-5 py-3 rounded-xl text-white bg-gray-600 hover:bg-gray-700">Cancel</a>
+    </form>
+</div>
+{% endblock %}
